@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/static/react/favicon.ico" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="DeepFake Detection - Advanced AI-powered video analysis" />
+  <link rel="manifest" href="/static/react/manifest.json" />
+  <title>DeepFake Detection</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="/static/react/css/main.03d2e280.chunk.css" rel="stylesheet" />
+  <link href="/static/index.css" rel="stylesheet" />
+  <script type="text/JavaScript">
+    window.data = {% if data %} {{ data|safe }} {% else %} null {% endif %};
+  </script>
+ </head>
+ <body>
+  <div id="root">
+    <nav class="nav">
+      <ul>
+        <li><a href="/" style="text-decoration: none; color: inherit;">HOME</a></li>
+        <li><a href="/Detect" style="text-decoration: none; color: inherit;">DETECT</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <h1 class="heading">IS YOUR VIDEO FAKE? CHECK IT!</h1>
+      <p class="para">Upload your video and our advanced AI will analyze it for signs of manipulation.</p>
+
+      <form action="/Detect" method="post" enctype="multipart/form-data" class="feature-card">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+          <input type="file" name="video" accept="video/*" style="margin-bottom: 1rem;" required />
+          <button type="submit" class="button">+ ADD VIDEO</button>
+        </div>
+      </form>
+
+      <div id="results" style="display: none;">
+        <div class="result-container">
+          <h2 class="result-heading">Analysis Result</h2>
+          <p id="result-text" class="result-text"></p>
+          <p id="confidence-text" class="confidence-text"></p>
+        </div>
+
+        <div class="frames-container" id="frames-grid">
+          <!-- Frames will be inserted here dynamically -->
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>We are dedicated to detecting and preventing deepfake videos using advanced AI technology.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: contact@deepfakedetect.ai</p>
+          <p>GitHub: github.com/deepfake-detect</p>
+        </div>
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <p>© 2024 DeepFake Detection</p>
+          <p>All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const data = window.data;
+      if (data) {
+        try {
+          const parsedData = typeof data === 'string' ? JSON.parse(data) : data;
+          const resultsDiv = document.getElementById('results');
+          const resultText = document.getElementById('result-text');
+          const confidenceText = document.getElementById('confidence-text');
+          const framesGrid = document.getElementById('frames-grid');
+
+          resultsDiv.style.display = 'block';
+          
+          // Display result and confidence
+          resultText.textContent = parsedData.output;
+          resultText.className = `result-text ${parsedData.output.toLowerCase()}`;
+          confidenceText.textContent = `Confidence: ${parsedData.confidence.toFixed(2)}%`;
+
+          // Display frames if available
+          if (parsedData.frames && parsedData.frames.length > 0) {
+            framesGrid.innerHTML = parsedData.frames.map((frame, index) => `
+              <div class="frame-item">
+                <img src="/static/frames/${frame}" alt="Frame ${index + 1}" />
+                <div class="frame-info">
+                  <p class="frame-number">Frame ${index + 1}</p>
+                </div>
+              </div>
+            `).join('');
+          }
+        } catch (error) {
+          console.error('Error parsing data:', error);
+        }
+      }
+    });
+  </script>
+ </body>
+</html>

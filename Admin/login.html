@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - DeepFake Detection</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background-color: #0d1117;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background-color: #111d2f;
+            border-radius: 8px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        h1 {
+            color: #64ffda;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            color: #64ffda;
+            margin-bottom: 0.5rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(100, 255, 218, 0.3);
+            border-radius: 4px;
+            background-color: rgba(100, 255, 218, 0.05);
+            color: #ffffff;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #64ffda;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background: transparent;
+            color: #64ffda;
+            border: 1px solid #64ffda;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+        }
+
+        .error-message {
+            color: #ff6b6b;
+            text-align: center;
+            margin-top: 1rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Admin Login</h1>
+        <form id="loginForm" onsubmit="return handleLogin(event)">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+            <div id="errorMessage" class="error-message">Invalid username or password</div>
+        </form>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Check credentials (admin/admin)
+            if (username === 'admin' && password === 'admin') {
+                // Set a flag in localStorage to indicate logged in state
+                localStorage.setItem('adminLoggedIn', 'true');
+                // Redirect to admin dashboard
+                window.location.href = 'index.html';
+            } else {
+                errorMessage.style.display = 'block';
+            }
+
+            return false;
+        }
+
+        // Check if user is already logged in
+        window.onload = function() {
+            if (localStorage.getItem('adminLoggedIn') === 'true' && 
+                window.location.pathname.endsWith('login.html')) {
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+</html>
