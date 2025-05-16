@@ -65,6 +65,7 @@ This repository implements a **Facial Deepfake Detection** pipeline combining:
 "# Deepfake_facial-video_detection"
  
 Set up a virtual environment
+```bash
 python3 -m venv venv
 source venv/bin/activate   # macOS/Linux
 venv\Scripts\activate      # Windows
