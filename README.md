@@ -1,11 +1,9 @@
 # Deepfake_facial-video_detection  
+ 
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue.svg)]() [![PyTorch](https://img.shields.io/badge/PyTorch-%3E%3D1.7-red.svg)]()  
+> **Deepfake detection** using CNN + LSTM models, served through Flask.  
 
-> **Real-time deepfake detection** using CNN + LSTM models, served through Flask.  
-
-**Repository:** https://github.com/Shivam-26102003/Deepfake_facial-video_detection  
-**Demo (optional):** _https://your-demo-link.com_  
+**Repository:** https://github.com/Shivam-26102003/Deepfake_facial-video_detection   
 
 ---
 
@@ -117,11 +115,11 @@ This repository implements a **Facial Deepfake Detection** pipeline combining:
 📈 Results
 Performance on Mixed Dataset (6000 videos):
 
- **Metric	  Value**
- Accuracy	  87.8%
- Precision    89.3%
- Recall	     86.5%
- F1-score     87.9%
+   **Metric	    Value**
+ 1. Accuracy	  87.8%
+ 2. Precision    89.3%
+ 3. Recall	     86.5%
+ 4. F1-score     87.9%
 
  
    
