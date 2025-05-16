@@ -1,4 +1,4 @@
-# Facial Deepfake Detection  
+# Deepfake_facial-video_detection  
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue.svg)]() [![PyTorch](https://img.shields.io/badge/PyTorch-%3E%3D1.7-red.svg)]()  
 
@@ -62,11 +62,71 @@ This repository implements a **Facial Deepfake Detection** pipeline combining:
    ```bash
    git clone https://github.com/Shivam-26102003/Deepfake_facial-video_detection.git
    cd Deepfake_facial-video_detection
-"# Deepfake_facial-video_detection"
+
+2. **Set up a virtual environment**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate   # macOS/Linux
+   venv\Scripts\activate      # Windows
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+4. **Prepare models**
+   Download pretrained ResNeXt-50 via PyTorch Hub.
+   Place trained LSTM checkpoint in models/ directory.
+
+## ▶️ Usage
+1. **Preprocess videos**
+   ```bash
+   python scripts/preprocess.py --input_dir data/raw --output_dir data/processed
+2. **Train the model**
+   ```bash
+   python train.py --config configs/train.yaml
+3. **Inference on a video**
+   ```bash
+   python predict.py --video path/to/video.mp4
+4. **Start the web server**
+   ```bash
+   python server.py
+   
+## 📂 Project Structure
+    ```bash
+      Deepfake_facial-video_detection/
+      ├── data/                   # raw and processed video datasets
+      ├── models/                 # model checkpoints
+      ├── scripts/                # preprocessing & training scripts
+      │   ├── preprocess.py
+      │   └── train.py
+      ├── static/                 # CSS, JS, images for Flask app
+      ├── templates/              # HTML templates for Flask app
+      ├── server.py               # Flask server entry-point
+      ├── requirements.txt
+      ├── LICENSE
+      └── README.md
+
+## 🔍 Models
+1. ResNeXt-50_32x4d: Extracts 2048-dimensional feature vectors per frame.
+2. LSTM: Single-layer, hidden size 2048, dropout 0.4, followed by a classifier.
+3. Classifier: FC → LeakyReLU → Softmax for binary real/fake prediction.
+
+## 🌐 Web Application
+1. Flask backend (server.py) accepts video uploads and returns predictions.
+2. Templates: Simple HTML form for file upload and result display.
+3. Static: CSS for styling and JS for frontend interactions.
+
+📈 Results
+Performance on Mixed Dataset (6000 videos):
+
+ **Metric	  Value**
+ Accuracy	  87.8%
+ Precision    89.3%
+ Recall	     86.5%
+ F1-score     87.9%
+
  
-Set up a virtual environment
-```bash
-python3 -m venv venv
-source venv/bin/activate   # macOS/Linux
-venv\Scripts\activate      # Windows
+   
+
+   
+
+
 
