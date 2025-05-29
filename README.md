@@ -4,9 +4,9 @@
 
  
 
-> **Deepfake detection** using CNN + LSTM models, served through Flask.  
+> *Deepfake detection* using CNN + LSTM models, served through Flask.  
 
-**Repository:** https://github.com/Shivam-26102003/Deepfake_facial-video_detection   
+*Repository:* https://github.com/Shivam-26102003/Deepfake_facial-video_detection   
 
 ---
 
@@ -28,70 +28,80 @@
 
 ## 🧐 About
 
-This repository implements a **Facial Deepfake Detection** pipeline combining:
+This repository implements a *Facial Deepfake Detection* pipeline combining:
 
-- **ResNeXt-50** CNN to extract spatial features from video frames.
-- **LSTM** RNN to model temporal inconsistencies across frame sequences.
+- *ResNeXt-50* CNN to extract spatial features from video frames.
+- *LSTM* RNN to model temporal inconsistencies across frame sequences.
 - A balanced multi-source dataset (FaceForensics++, DFDC, Celeb-DF).
 - A Flask-based web interface for real-time video uploads and predictions.
 
 ---
 
+## 📁 Dataset
+
+This project uses a combination of publicly available deepfake datasets:
+
+- 📦 *[FaceForensics++](https://github.com/ondyari/FaceForensics)* – A popular dataset for facial manipulation detection.
+- 📦 *[Deepfake Detection Challenge Dataset (DFDC)](https://www.kaggle.com/c/deepfake-detection-challenge/data)* – Released by Facebook via Kaggle.
+- 📦 *[Celeb-DF (v2)](https://github.com/yuezunli/Celeb-DF)* – High-quality deepfake dataset for research.
+
+---
+
 ## ✨ Features
 
-- **Spatial Feature Extraction**: ResNeXt-50 pretrained on ImageNet for robust embeddings.
-- **Temporal Analysis**: LSTM captures frame-to-frame artifacts indicative of deepfakes.
-- **Web UI**: Upload any video via browser and receive confidence scores instantly.
-- **Modular Design**: Separate scripts for preprocessing, training, inference, and serving.
+- *Spatial Feature Extraction*: ResNeXt-50 pretrained on ImageNet for robust embeddings.
+- *Temporal Analysis*: LSTM captures frame-to-frame artifacts indicative of deepfakes.
+- *Web UI*: Upload any video via browser and receive confidence scores instantly.
+- *Modular Design*: Separate scripts for preprocessing, training, inference, and serving.
 
 ---
 
-## 🛠️ Technologies
+## 🛠 Technologies
 
-- **Language**: Python 3.8+
-- **Deep Learning**: PyTorch >=1.7
-- **Web Framework**: Flask
-- **Computer Vision**: OpenCV, face_recognition
-- **Data Handling**: NumPy, Pandas
-- **Visualization**: Matplotlib
+- *Language*: Python 3.8+
+- *Deep Learning*: PyTorch >=1.7
+- *Web Framework*: Flask
+- *Computer Vision*: OpenCV, face_recognition
+- *Data Handling*: NumPy, Pandas
+- *Visualization*: Matplotlib
 
 ---
 
-## ⚙️ Installation
+## ⚙ Installation
 
-1. **Clone the repo**
-   ```bash
+1. *Clone the repo*
+   bash
    git clone https://github.com/Shivam-26102003/Deepfake_facial-video_detection.git
    cd Deepfake_facial-video_detection
 
 2. **Set up a virtual environment**
-   ```bash
+   bash
    python3 -m venv venv
    source venv/bin/activate   # macOS/Linux
    venv\Scripts\activate      # Windows
-3. **Install dependencies**
-   ```bash
+3. *Install dependencies*
+   bash
    pip install -r requirements.txt
 4. **Prepare models**
    Download pretrained ResNeXt-50 via PyTorch Hub.
    Place trained LSTM checkpoint in models/ directory.
 
-## ▶️ Usage
+## ▶ Usage
 1. **Preprocess videos**
-   ```bash
+   bash
    python scripts/preprocess.py --input_dir data/raw --output_dir data/processed
-2. **Train the model**
-   ```bash
+2. *Train the model*
+   bash
    python train.py --config configs/train.yaml
 3. **Inference on a video**
-   ```bash
+   bash
    python predict.py --video path/to/video.mp4
-4. **Start the web server**
-   ```bash
+4. *Start the web server*
+   bash
    python server.py
    
 ## 📂 Project Structure
-    ```bash
+    bash
       Deepfake_facial-video_detection/
       ├── data/                   # raw and processed video datasets
       ├── models/                 # model checkpoints
@@ -118,16 +128,8 @@ This repository implements a **Facial Deepfake Detection** pipeline combining:
 📈 Results
 Performance on Mixed Dataset (6000 videos):
 
-   **Metric	    Value**
+   *Metric	    Value*
  1. Accuracy	  87.8%
  2. Precision    89.3%
  3. Recall	     86.5%
  4. F1-score     87.9%
-
- 
-   
-
-   
-
-
-
