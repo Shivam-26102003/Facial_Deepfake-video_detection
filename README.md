@@ -1,4 +1,4 @@
-# Deepfake_facial-video_detection  
+# Facial_Deepfake-video_detection  
  
 
 > **Deepfake detection** using CNN + LSTM models, served through Flask.  
