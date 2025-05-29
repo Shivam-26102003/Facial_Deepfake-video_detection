@@ -1,4 +1,7 @@
-# Facial_Deepfake-video_detection  
+# Facial_Deepfake-video_detection
+[![License: Custom](https://img.shields.io/badge/License-Custom-blue.svg)](LICENSE) [![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/downloads/)  
+[![PyTorch](https://img.shields.io/badge/PyTorch-%3E%3D1.7-red.svg)](https://pytorch.org/)
+
  
 
 > **Deepfake detection** using CNN + LSTM models, served through Flask.  
