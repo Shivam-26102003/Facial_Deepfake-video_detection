@@ -127,7 +127,7 @@ This project uses a combination of publicly available deepfake datasets:
 2. Templates: Simple HTML form for file upload and result display.
 3. Static: CSS for styling and JS for frontend interactions.
 
-📈 Results
+## 📈 Results
 Performance on Mixed Dataset (6000 videos):
 
    *Metric	    Value*
@@ -135,3 +135,20 @@ Performance on Mixed Dataset (6000 videos):
  2. Precision    89.3%
  3. Recall	     86.5%
  4. F1-score     87.9%
+
+## 🤝 Contributing
+
+We welcome contributions to this project!  
+Special thanks to my teammate:
+
+- **[Abhinav Patel](https://github.com/Abhinav3289)**  
+  [LinkedIn](https://www.linkedin.com/in/abhinav-patel-a876a9253/)
+
+- **[Shivam-26102003](https://github.com/Shivam-26102003)**
+- [LinkedIn](https://www.linkedin.com/in/shivam-sagar-40266225a/)
+
+Feel free to open Issues or Pull Requests.
+
+## License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
