@@ -12,14 +12,16 @@
 
 ## 🔖 Table of Contents
 
-- [About](#about)
-- [Features](#features)
-- [Technologies](#technologies)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Models](#models)
-- [Web Application](#web-application)
+## 🔖 Table of Contents
+
+- [About](#-about)
+- [Features](#-features)
+- [Technologies](#-technologies)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Project Structure](#-project-structure)
+- [Models](#-models)
+- [Web Application](#-web-application)
 - [Results](#results)
 - [Contributing](#contributing)
 - [License](#license)
