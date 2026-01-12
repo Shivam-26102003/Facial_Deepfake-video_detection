@@ -3,13 +3,11 @@ flask-login
 flask-sqlalchemy
 matplotlib
 cmake
-torch 
 torchvision
 numpy
 scikit-image
 opencv-python
 face-recognition
-# Werkzeug==2.3.8
 streamlit==1.24.0
 torch==2.0.1
 torchvision==0.15.2
