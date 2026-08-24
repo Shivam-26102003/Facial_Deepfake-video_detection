@@ -12,8 +12,6 @@
 
 ## 🔖 Table of Contents
 
-## 🔖 Table of Contents
-
 - [About](#-about)
 - [Features](#-features)
 - [Technologies](#-technologies)
@@ -73,7 +71,7 @@ This project uses a combination of publicly available deepfake datasets:
 
 1. *Clone the repo*
    bash
-   git clone https://github.com/Shivam-26102003/Deepfake_facial-video_detection.git
+   git clone https://github.com/Shivam-26102003/Facial_Deepfake-video_detection.git
    cd Deepfake_facial-video_detection
 
 2. **Set up a virtual environment**
